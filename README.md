@@ -1,38 +1,52 @@
-# sv
+# PVC.DOG !!! 
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+## Foundation
 
-## Creating a project
+Svelte Files: 
+- page / layout 
+- lhs panel
+- rhs panel
 
-If you're seeing this, you've probably already done this step. Congrats!
+Typescript Files:
+- ascii_animator (and a file for the animation)
+- silly_stats (and a file for the stats options) 
+- evolving
+- blinkie_scrolling (and a collection of blinkies) 
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Structure
 
-# create a new project in my-app
-npx sv create my-app
-```
+**+layout**
+- head info for site
+- Header 
+    - ascii animation
+    - theme picker
+- Footer
 
-## Developing
+**+page**
+- content body
+    - preps the space for the panels to layout correctly
+- lhs panel
+- rhs panel
+- **Center Panel**
+    - Hi check it out i do cool stuff 
+    - Image-Title-Description style portfolio
+        - basically we have several of these and they introduce what exactly i do for fun
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+**lhs_panel**
+- silly_stats
+    - picks a random statistic and tracks it while you're on the site
+- evolving thing + controls for it
+    - some sort of cutesy math thing happening
+    - (conway's game of life maybe) ??
+    - (evolving-response rock-paper-scissors) ??
+    - (random qr code generator + exporter) ??
 
-```sh
-npm run dev
+**rhs_panel**
+- a bio section
+- list of sites that i made 
+- my professional links
+- my personal silly links
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+### Credits
+developed by alicevoid
+last updated: 1/5/2026
