@@ -18,9 +18,10 @@ Typescript Files:
 **+layout**
 - head info for site
 - Header 
-    - ascii animation
-    - theme picker
+    - ascii animation (big title)
+    - theme picker (4 tiny square buttons to the right)
 - Footer
+    - alicevoid reminder (center, small)
 
 **+page**
 - content body

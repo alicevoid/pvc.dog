@@ -3,12 +3,22 @@
 </script>
 
 <style>
+
     .content-body {
-        background: var(--sectionbg);
-        color: var(--text-color);
-        min-height: 50vh;
-        box-sizing: border-box;
+    min-height: calc(100vh - 160px);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    /* Default: use background color for all themes */
+    background-color: var(--background);
     }
+
+    /* if theme = original, content-body background is transparent */
+    :global(html[data-theme='original']) .content-body {
+        background-color: transparent;
+    }
+
 </style>
 
 <!-- Main Container -->
