@@ -36,28 +36,7 @@
 
 /* CHANGE COLORS HERE !!! */
 :root {
-
-    /* Acid Bath */
-    --ab_accent: #f1ffe7;
-    --ab_background: #6c464e;
-    --ab_content-accent: #a9fdac;
-    --ab_content: #44cf6c;
-    --ab_header-color: #32a287;
-    --ab_text-color: #6C464E;
-    --ab_linkbg: #00ccff;
-    --ab_text-color: #f1ffe7;
-
-    /* Silica Colors */
-    --sil_accent: #D1D5BA;
-    --sil_background: #87958F;
-    --sil_content-accent: #EAECDF;
-    --sil_content: #D1D5BA;
-    --sil_header-color: #7B7574;
-    --sil_text-color: #A2A497;
-    --sil_linkbg: #87958F;
-    --sil_text-color: #282828;
-
-    /* Professional Colors */
+    /* [UNUSED] Professional Colors */
     --pro_accent: #004080;
     --pro_background: #e6f0ff;
     --pro_content-accent: #cce0ff;
@@ -76,6 +55,26 @@
     --gs_text-color: #706f6f;
     --gs_linkbg: #c5c5c5;
     --gs_text-color: #000000;
+
+    /* Silica Colors */
+    --sil_accent: #D1D5BA;
+    --sil_background: #87958F;
+    --sil_content-accent: #EAECDF;
+    --sil_content: #D1D5BA;
+    --sil_header-color: #7B7574;
+    --sil_text-color: #A2A497;
+    --sil_linkbg: #87958F;
+    --sil_text-color: #282828;
+
+    /* Acid Bath */
+    --ab_accent: #6C464E;
+    --ab_background: #32a287;
+    --ab_content-accent: #a9fdac;
+    --ab_content: #44cf6c;
+    --ab_header-color: #a9fdac;
+    --ab_text-color: #6C464E;
+    --ab_linkbg: #32a287;
+    --ab_text-color: #f1ffe7;
 
     /* Original Colors */
     --ori_accent: #12EFDD;
