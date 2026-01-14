@@ -13,18 +13,25 @@
     // ==========================================================================================
 
     // Theme Stuff
-    let currentTheme = $state('original');
+    let currentTheme = $state('constructionzone');
 
     // Set the Theme
     function setTheme(themeName: string) {
         currentTheme = themeName;
         if (themeName && typeof document !== 'undefined') {
             document.documentElement.setAttribute('data-theme', themeName);
+
+            // localstorage
+            localStorage.setItem('theme', themeName);
         }
     }
 
     // Initialize theme on mount
     onMount(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            currentTheme = savedTheme;
+        }
         document.documentElement.setAttribute('data-theme', currentTheme);
     });
 
@@ -36,45 +43,33 @@
 
 /* CHANGE COLORS HERE !!! */
 :root {
-    /* [UNUSED] Professional Colors */
-    --pro_accent: #004080;
-    --pro_background: #e6f0ff;
-    --pro_content-accent: #cce0ff;
-    --pro_content: #b3c7ff;
-    --pro_header-color: #003366;
-    --pro_text-color: #002244;
-    --pro_linkbg: #00509e;
-    --pro_text-color: #000000;
-
-    /* Greyscale Colors */
-    --gs_accent: #8a8a8a;
-    --gs_background: #5e5e5e;
-    --gs_content-accent: #858585;
-    --gs_content: #c4c4c4;
-    --gs_header-color: #cecece;
-    --gs_text-color: #706f6f;
-    --gs_linkbg: #c5c5c5;
-    --gs_text-color: #000000;
 
     /* Silica Colors */
     --sil_accent: #D1D5BA;
-    --sil_background: #87958F;
+    --sil_background: #A2A497;
     --sil_content-accent: #EAECDF;
     --sil_content: #D1D5BA;
     --sil_header-color: #7B7574;
-    --sil_text-color: #A2A497;
-    --sil_linkbg: #87958F;
-    --sil_text-color: #282828;
+    --sil_text-color: #7B7574;
+    --cz_linkbg: #87958F;
 
-    /* Acid Bath */
-    --ab_accent: #6C464E;
-    --ab_background: #32a287;
-    --ab_content-accent: #a9fdac;
-    --ab_content: #44cf6c;
-    --ab_header-color: #a9fdac;
-    --ab_text-color: #6C464E;
-    --ab_linkbg: #32a287;
-    --ab_text-color: #f1ffe7;
+    /* Construction Zone Colors */
+    --cz_accent: #f4eded;
+    --cz_background: #36827f;
+    --cz_content-accent: #98af76;
+    --cz_content: #f9db6d;
+    --cz_header-color: #877666;
+    --cz_text-color: #464D77;
+    --cz_linkbg: #36827f;
+
+    /* Sandbox */
+    --sb_accent: #f9f7cd;
+    --sb_background: #246eb9;
+    --sb_content-accent: #f5ee9e;
+    --sb_content: #f06543;
+    --sb_header-color: #4cb944;
+    --sb_text-color: #f06543;
+    --sb_linkbg: #246eb9;
 
     /* Original Colors */
     --ori_accent: #12EFDD;
@@ -84,7 +79,28 @@
     --ori_header-color: #6F12EF;
     --ori_text-color: #440ab1;
     --ori_linkbg: #00fc7e;
-    --ori_text-color: #000000;
+}
+
+/* CONSTRUCTION ZONE THEMEING */
+:global(html[data-theme='constructionzone']) {
+    --accent: var(--cz_accent);
+    --background: var(--cz_background);
+    --content-accent: var(--cz_content-accent);
+    --content: var(--cz_content);
+    --header-color: var(--cz_header-color);
+    --text-color: var(--cz_text-color);
+    --linkbg: var(--cz_linkbg);
+}
+
+/* SANDBOX THEMEING */
+:global(html[data-theme='sandbox']) {
+    --accent: var(--sb_accent);
+    --background: var(--sb_background);
+    --content-accent: var(--sb_content-accent);
+    --content: var(--sb_content);
+    --header-color: var(--sb_header-color);
+    --text-color: var(--sb_text-color);
+    --linkbg: var(--sb_linkbg);
 }
 
 /* SILICA THEMEING */
@@ -96,28 +112,6 @@
     --header-color: var(--sil_header-color);
     --text-color: var(--sil_text-color);
     --linkbg: var(--sil_linkbg);
-}
-
-/* ACID BATH THEMEING */
-:global(html[data-theme='acidbath']) {
-    --accent: var(--ab_accent);
-    --background: var(--ab_background);
-    --content-accent: var(--ab_content-accent);
-    --content: var(--ab_content);
-    --header-color: var(--ab_header-color);
-    --text-color: var(--ab_text-color);
-    --linkbg: var(--ab_linkbg);
-}
-
-/* GREYSCALE THEMEING */
-:global(html[data-theme='greyscale']) {
-    --accent: var(--gs_accent);
-    --background: var(--gs_background);
-    --content-accent: var(--gs_content-accent);
-    --content: var(--gs_content);
-    --header-color: var(--gs_header-color);
-    --text-color: var(--gs_text-color);
-    --linkbg: var(--gs_linkbg);
 }
 
 /* ORIGINAL THEMEING */
@@ -133,13 +127,13 @@
 
 /* DEFAULT THEME (applies immediately on load before JS runs) */
 :global(html) {
-    --accent: var(--ori_accent);
-    --background: var(--ori_background);
-    --content-accent: var(--ori_content-accent);
-    --content: var(--ori_content);
-    --header-color: var(--ori_header-color);
-    --text-color: var(--ori_text-color);
-    --linkbg: var(--ori_linkbg);
+    --accent: var(--cz_accent);
+    --background: var(--cz_background);
+    --content-accent: var(--cz_content-accent);
+    --content: var(--sil_content);
+    --header-color: var(--cz_header-color);
+    --text-color: var(--cz_text-color);
+    --linkbg: var(--cz_linkbg);
 }
 
 :global(html){
@@ -212,18 +206,18 @@
     transition: transform 0.1s ease;
 }
 
-:global(.theme-acidbath) {
-    background: linear-gradient(135deg, var(--ab_accent) 50%, var(--ab_header-color) 50%);
+:global(.theme-sandbox) {
+    background: linear-gradient(135deg, var(--sb_accent) 50%, var(--sb_header-color) 50%);
+    background-size: contain;
+}
+
+:global(.theme-constructionzone) {
+    background: linear-gradient(135deg, var(--cz_accent) 50%, var(--cz_header-color) 50%);
     background-size: contain;
 }
 
 :global(.theme-silica) {
     background: linear-gradient(135deg, var(--sil_accent) 50%, var(--sil_header-color) 50%);
-    background-size: contain;
-}
-
-:global(.theme-greyscale) {
-    background: linear-gradient(135deg, var(--gs_accent) 50%, var(--gs_header-color) 50%);
     background-size: contain;
 }
 
@@ -270,12 +264,12 @@
 
         <!-- Theme Switcher Buttons -->
         <div class="theme_div">
-            <div class="theme_button theme-greyscale {currentTheme === 'greyscale' ? 'active' : ''}"
-                onclick={() => setTheme('greyscale')} onkeydown={() => setTheme('greyscale')} role="button" tabindex="0"></div>
             <div class="theme_button theme-silica {currentTheme === 'silica' ? 'active' : ''}"
                 onclick={() => setTheme('silica')} onkeydown={() => setTheme('silica')} role="button" tabindex="0"></div>
-            <div class="theme_button theme-acidbath {currentTheme === 'acidbath' ? 'active' : ''}"
-                onclick={() => setTheme('acidbath')} onkeydown={() => setTheme('acidbath')} role="button" tabindex="0"></div>
+            <div class="theme_button theme-constructionzone {currentTheme === 'constructionzone' ? 'active' : ''}"
+                onclick={() => setTheme('constructionzone')} onkeydown={() => setTheme('constructionzone')} role="button" tabindex="0"></div>
+            <div class="theme_button theme-sandbox {currentTheme === 'sandbox' ? 'active' : ''}"
+                onclick={() => setTheme('sandbox')} onkeydown={() => setTheme('sandbox')} role="button" tabindex="0"></div>
             <div class="theme_button theme-original {currentTheme === 'original' ? 'active' : ''}"
                 onclick={() => setTheme('original')} onkeydown={() => setTheme('original')} role="button" tabindex="0"></div>
         </div>
