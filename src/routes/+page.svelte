@@ -34,7 +34,7 @@
         width: 320px;
         height: 400px;
         background: var(--content-accent);
-        left: 150px;
+        left: calc(50vw - 500px);  /* 50% of viewport minus offset */
         top: 50px;  /* overlaps above mid_content */
         z-index: 0;
     }
@@ -44,7 +44,7 @@
         width: 320px;
         height: 400px;
         background: var(--content-accent);
-        right: 10%;
+        right: calc(50vw - 600px);  /* 50% of viewport plus offset */
         top: 350px;  /* lower than lhs_content */
     }
 
