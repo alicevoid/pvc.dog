@@ -1,5 +1,5 @@
 <script>
-
+    import { posts } from '$lib/posts';
 </script>
 
 <style>
@@ -121,12 +121,11 @@
         border-bottom: 1px solid var(--text-color);
     } 
 
-    .img_placeholder {
+    .post_image {
         width: 200px;
-        height: 110px;
-        background: var(--background);
+        height: auto;
         float: right;
-        margin: 0 10px 0;
+        margin: 0 0 10px 10px;
     }
 
     /* Right-Hand Side */
@@ -215,18 +214,22 @@
 
         <div class="mid_feed">
 
-            <!-- ideally, i want to find a way to not write my posts directly in-code haha -->
-            <div class="post">
-                <div class="post_header">
-                    <h3>Some Thing I Did</h3>
-                    <p>06/15/2024</p>
-                </div>
+            <!-- posts come from src/lib/posts.ts now! -->
+            {#each posts as post}
+                <div class="post">
+                    <div class="post_header">
+                        <h3>{post.title}</h3>
+                        <p>{post.date}</p>
+                    </div>
 
-                <div class="post_body">
-                    <div class="img_placeholder"> image here... </div>
-                    <p>This is a sample blog post content. if this was a post, i would probably have something quite exquisitely erudite and professional to say. you'll notice i'm intentionally typing for a while, to see how the container reacts to long texts.</p>
+                    <div class="post_body">
+                        {#if post.image}
+                            <img class="post_image" src={post.image} alt={post.title} />
+                        {/if}
+                        <p>{post.content}</p>
+                    </div>
                 </div>
-            </div>
+            {/each}
 
         </div>
 

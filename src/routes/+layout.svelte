@@ -75,7 +75,7 @@
     --ori_accent: #12EFDD;
     --ori_background: #1224EF;
     --ori_content-accent: #12EFDD;
-    --ori_content: #e0bcc5;
+    --ori_content: #f0d1da;
     --ori_header-color: #f20b99;
     --ori_text-color: #440ab1;
     --ori_linkbg: #00fc7e;
@@ -204,6 +204,7 @@
     cursor: pointer;
     border: 2px solid var(--background);
     transition: transform 0.1s ease;
+    opacity: 0.6;
 }
 
 :global(html[data-theme='sandbox']) .theme_button {
