@@ -1,6 +1,14 @@
-<script>
+<script lang="ts">
     import { posts } from '$lib/posts';
+
+    // lightbox state - which image is open (null = closed)
+    let lightbox_src: string | null = $state(null);
 </script>
+
+<!-- escape key closes the lightbox -->
+<svelte:window onkeydown={(e) => {
+    if (e.key === 'Escape') lightbox_src = null;
+}} />
 
 <style>
 
@@ -121,11 +129,42 @@
         border-bottom: 1px solid var(--text-color);
     } 
 
+    .post_image_btn {
+        float: right;
+        margin: 0 0 0 10px;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
     .post_image {
         width: 200px;
         height: auto;
-        float: right;
-        margin: 0 0 10px 10px;
+        display: block;
+        margin-right: 15px;
+
+    }
+
+    /* fullscreen image viewer */
+    .lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        cursor: pointer;
+    }
+
+    .lightbox img {
+        max-width: 90vw;
+        max-height: 90vh;
+        object-fit: contain;
     }
 
     /* Right-Hand Side */
@@ -199,7 +238,7 @@
          </div>
 
          <!-- random blinkie people finder -->
-         <div class="blinkies_scroll"> scroll scroll blinkies here...
+         <div class="blinkies_scroll">
          </div>
     </div>
     
@@ -224,7 +263,9 @@
 
                     <div class="post_body">
                         {#if post.image}
-                            <img class="post_image" src={post.image} alt={post.title} />
+                            <button class="post_image_btn" onclick={() => lightbox_src = post.image ?? null}>
+                                <img class="post_image" src={post.image} alt={post.title} />
+                            </button>
                         {/if}
                         <p>{post.content}</p>
                     </div>
@@ -255,3 +296,9 @@
     </div>
 </main>
 
+<!-- lightbox overlay -->
+{#if lightbox_src}
+    <button class="lightbox" onclick={() => lightbox_src = null}>
+        <img src={lightbox_src} alt="fullscreen view" />
+    </button>
+{/if}
