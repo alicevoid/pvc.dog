@@ -54,13 +54,13 @@
     --sil_linkbg: #A2A497;
 
     /* Construction Zone Colors */
-    --cz_accent: #f4eded;
-    --cz_background: #36827f;
-    --cz_content-accent: #f9db6d;
-    --cz_content: #464D77;
-    --cz_header-color: #36827f;
-    --cz_text-color: #36827f;
-    --cz_linkbg: #464D77;
+    --cz_accent: #642915;
+    --cz_background: #008585;
+    --cz_content-accent: #74a892;
+    --cz_content: #74a892;
+    --cz_header-color: #c7522a;
+    --cz_text-color: #fbf2c4;
+    --cz_linkbg: #e5c185;
 
     /* Sandbox */
     --sb_accent: #f9f7cd;
@@ -74,9 +74,9 @@
     /* Original Colors */
     --ori_accent: #12EFDD;
     --ori_background: #1224EF;
-    --ori_content-accent: #f20b99;
+    --ori_content-accent: #12EFDD;
     --ori_content: #e0bcc5;
-    --ori_header-color: #6F12EF;
+    --ori_header-color: #f20b99;
     --ori_text-color: #440ab1;
     --ori_linkbg: #00fc7e;
 }
@@ -282,6 +282,7 @@
 
     <!-- My Awesome Footer ^^! -->
     <div class="footer">
+        <!-- The Memo -->
         <p>
             operated by alicevoid - make sure to be nice to yourself &lt;3
         </p>

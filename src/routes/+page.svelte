@@ -28,6 +28,8 @@
         color: var(--header-color);
     }
 
+    /* Left-Hand Side */
+
     .lhs_content {
         position: absolute;
         width: 300px;
@@ -37,18 +39,24 @@
         top: 50px;  /* overlaps above mid_content */
         z-index: 0;
         padding: 0 20px 20px 20px;
+        border-right: 1px solid var(--text-color);
+        border-bottom: 1px solid var(--text-color);
     }
 
     .aboutme {
-        background: var(--linkbg);
+        /* background: var(--linkbg); */
     }
 
     .sites {
-        background: var(--linkbg);
+        /* background: var(--linkbg); */
     }
 
     .links {
-        background: var(--linkbg);
+        /* background: var(--linkbg); */
+        padding-top: 10px;
+        padding-left: 10px;
+        border-top: 1px solid var(--text-color);
+        border-left: 1px solid var(--text-color);
     }
 
     .blinkies_scroll {
@@ -58,7 +66,11 @@
         right: 0px;
         height: 35px;
         background: var(--linkbg);
+        border-top: 1px solid var(--text-color);
+        border-bottom: 1px solid var(--text-color);
     }  
+
+    /* Middle Content Area */
 
     .mid_content {
         width: 440px;
@@ -71,26 +83,34 @@
         padding-left: 60px;
         padding-right: 20px;
         padding-bottom: 20px;
+        border-right: 1px solid var(--text-color);
     }
 
     .intro {
+        /* background: var(--linkbg); */
         width: 100%;
         height: 150px;
-        background: var(--linkbg);
         margin-bottom: 20px;
+        border-bottom: 1px solid var(--text-color);
+        border-left: 1px solid var(--text-color);
     }
 
     .mid_content h2 {
         padding: 20px;
     }
-
+  
     .mid_content p {
-        padding: 0 20px 20px 20px;
+        padding: 0 20px 0 20px;
     }
     
     .mid_feed {
+        /* background: var(--linkbg); */
         padding: 20px;
-        background: var(--linkbg);
+    }
+
+    .post {
+        width: 100%;
+        border-right: 1px solid var(--text-color);
     }
 
     .post_header {
@@ -109,6 +129,8 @@
         margin: 0 10px 0;
     }
 
+    /* Right-Hand Side */
+
     .rhs_content {
         position: absolute;
         width: 300px;
@@ -117,12 +139,13 @@
         right: calc(50vw - 620px);  /* 50% of viewport plus offset */
         top: 350px;  /* lower than lhs_content */
         padding: 20px 20px 20px 20px;
+        /* border: 1px solid var(--text-color); */
     }
 
     .fact {
         width: 280px;
         height: 140px;
-        background: var(--linkbg);
+        /* background: var(--linkbg); */
         margin-bottom: 20px;
         padding: 10px;
     }
@@ -138,13 +161,13 @@
         width: 250px;
         height: 210px;
         margin-right: 20px;
-        background: var(--linkbg);
+        /* background: var(--linkbg); */
     }
 
     .mathfun_controller {
         width: 30px;
         height: 210px;
-        background: var(--linkbg);
+        /* background: var(--linkbg); */
     }
 
     /* the humble, Mobile Phone */
@@ -162,9 +185,9 @@
 
         <!-- hi im alicevoid -->
          <div class="aboutme">
-            <h2>hi im alicevoid</h2>
+            <h2>hi im alicevoid !!</h2>
             <p style="text-indent: 30px">Im a girl on the internet who does a bunch of random stuff for fun!</p>
-            <p style="text-indent: 30px">This website is my personal little shrine where I can share the cool things I learn and make. Feel free to look through, or just yap at me if u have any questions.</p>
+            <p>This website is my personal little shrine where I can share the cool things I learn and make. Feel free to look through, or just yap at me if u have any questions.</p>
          </div>
 
          <!-- where u can find me -->
