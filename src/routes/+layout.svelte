@@ -72,13 +72,13 @@
     --sb_linkbg: #f06543;
 
     /* Original Colors */
-    --ori_accent: #12EFDD;
-    --ori_background: #1224EF;
-    --ori_content-accent: #12EFDD;
-    --ori_content: #f0d1da;
-    --ori_header-color: #f20b99;
-    --ori_text-color: #440ab1;
-    --ori_linkbg: #00fc7e;
+    --ori_accent: #12efdd;
+    --ori_background: #777fd2;
+    --ori_content-accent: #eaf1ab;
+    --ori_content: #efe3e7;
+    --ori_header-color: #550fc5;
+    --ori_text-color: #f20b99;
+    --ori_linkbg: #12efdd;
 }
 
 /* CONSTRUCTION ZONE THEMEING */
