@@ -186,6 +186,8 @@
         /* background: var(--linkbg); */
         margin-bottom: 20px;
         padding: 10px;
+        border-bottom: 1px solid var(--text-color);
+        border-left: 1px solid var(--text-color);
     }
 
     .math {
@@ -200,12 +202,16 @@
         height: 210px;
         margin-right: 20px;
         /* background: var(--linkbg); */
+        border-top: 1px solid var(--text-color);
+        border-left: 1px solid var(--text-color);
     }
 
     .mathfun_controller {
         width: 30px;
         height: 210px;
         /* background: var(--linkbg); */
+        border-left: 1px solid var(--text-color);
+        border-top: 1px solid var(--text-color);
     }
 
     /* the humble, Mobile Phone */
