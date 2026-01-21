@@ -13,7 +13,7 @@
     // ==========================================================================================
 
     // Theme Stuff
-    let currentTheme = $state('constructionzone');
+    let currentTheme = $state('silica');
 
     // Set the Theme
     function setTheme(themeName: string) {
@@ -127,13 +127,13 @@
 
 /* DEFAULT THEME (applies immediately on load before JS runs) */
 :global(html) {
-    --accent: var(--cz_accent);
-    --background: var(--cz_background);
-    --content-accent: var(--cz_content-accent);
-    --content: var(--cz_content);
-    --header-color: var(--cz_header-color);
-    --text-color: var(--cz_text-color);
-    --linkbg: var(--cz_linkbg);
+    --accent: var(--sil_accent);
+    --background: var(--sil_background);
+    --content-accent: var(--sil_content-accent);
+    --content: var(--sil_content);
+    --header-color: var(--sil_header-color);
+    --text-color: var(--sil_text-color);
+    --linkbg: var(--sil_linkbg);
 }
 
 :global(html){
