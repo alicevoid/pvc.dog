@@ -46,30 +46,30 @@
 
     /* Silica Colors */
     --sil_accent: #D1D5BA;
-    --sil_background: #A2A497;
+    --sil_background: #87958F;
     --sil_content-accent: #D1D5BA;
     --sil_content: #e1e4d0;
     --sil_header-color: #7B7574;
     --sil_text-color: #7B7574;
-    --sil_linkbg: #87958F;
+    --sil_linkbg: #A2A497;
 
     /* Construction Zone Colors */
     --cz_accent: #f4eded;
     --cz_background: #36827f;
-    --cz_content-accent: #98af76;
-    --cz_content: #f9db6d;
-    --cz_header-color: #877666;
-    --cz_text-color: #464D77;
-    --cz_linkbg: #36827f;
+    --cz_content-accent: #f9db6d;
+    --cz_content: #464D77;
+    --cz_header-color: #36827f;
+    --cz_text-color: #36827f;
+    --cz_linkbg: #464D77;
 
     /* Sandbox */
     --sb_accent: #f9f7cd;
-    --sb_background: #246eb9;
-    --sb_content-accent: #f5ee9e;
+    --sb_background: #f5ee9e;
+    --sb_content-accent: #246eb9;
     --sb_content: #f06543;
     --sb_header-color: #4cb944;
-    --sb_text-color: #f06543;
-    --sb_linkbg: #246eb9;
+    --sb_text-color: #f9f7cd;
+    --sb_linkbg: #f06543;
 
     /* Original Colors */
     --ori_accent: #12EFDD;
@@ -206,6 +206,11 @@
     transition: transform 0.1s ease;
 }
 
+:global(html[data-theme='sandbox']) .theme_button {
+    border-color: var(--linkbg);
+    background-clip: padding-box;
+}
+
 :global(.theme-sandbox) {
     background: linear-gradient(135deg, var(--sb_accent) 50%, var(--sb_header-color) 50%);
     background-size: contain;
@@ -228,7 +233,7 @@
 
 .footer {
     background: var(--accent);
-    color: var(--text-color);
+    color: var(--header-color);
     height: 60px;
     width: 100%;
     z-index: 9999;
