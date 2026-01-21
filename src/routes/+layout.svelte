@@ -47,11 +47,11 @@
     /* Silica Colors */
     --sil_accent: #D1D5BA;
     --sil_background: #A2A497;
-    --sil_content-accent: #EAECDF;
-    --sil_content: #D1D5BA;
+    --sil_content-accent: #D1D5BA;
+    --sil_content: #e1e4d0;
     --sil_header-color: #7B7574;
     --sil_text-color: #7B7574;
-    --cz_linkbg: #87958F;
+    --sil_linkbg: #87958F;
 
     /* Construction Zone Colors */
     --cz_accent: #f4eded;
@@ -130,7 +130,7 @@
     --accent: var(--cz_accent);
     --background: var(--cz_background);
     --content-accent: var(--cz_content-accent);
-    --content: var(--sil_content);
+    --content: var(--cz_content);
     --header-color: var(--cz_header-color);
     --text-color: var(--cz_text-color);
     --linkbg: var(--cz_linkbg);
