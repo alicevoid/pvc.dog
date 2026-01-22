@@ -185,9 +185,17 @@
         height: 140px;
         /* background: var(--linkbg); */
         margin-bottom: 20px;
-        padding: 10px;
+        padding: 0 10px 10px 10px;
         border-bottom: 1px solid var(--text-color);
         border-left: 1px solid var(--text-color);
+    }
+
+    .vsbw {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: flex-start;
+        height: 110px;
     }
 
     .math {
@@ -285,7 +293,15 @@
     <div class="rhs_content">
         <!-- fun random facts that i like -->
         <div class="fact">
-            fact thingy here...
+            <h3>who would win in a fight</h3>
+            <div class="vsbw">
+                <div class="vsbw_lhs">
+                    <p>ants</p>
+                </div>
+                <div class="vsbw_rhs">
+                    <p>earth</p>
+                </div>
+            </div>
         </div>
 
         <div class="math">
