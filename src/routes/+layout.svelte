@@ -5,11 +5,12 @@
 
 	import favicon from '$lib/assets/favicon.svg';
     import { onMount } from 'svelte';
+    import { AsciiAnimator } from '$lib/typescript/ascii_animator';
 
 	let { children } = $props();
 
     // ==========================================================================================
-    // THEME STUFF 
+    // THEME STUFF
     // ==========================================================================================
 
     // Theme Stuff
@@ -26,13 +27,27 @@
         }
     }
 
-    // Initialize theme on mount
+    // ==========================================================================================
+    // ASCII ANIMATOR
+    // ==========================================================================================
+
+    const animator = new AsciiAnimator();
+    let asciiFrame = $state(animator.currentFrame);
+
+    // Initialize theme + animator on mount
     onMount(() => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
             currentTheme = savedTheme;
         }
         document.documentElement.setAttribute('data-theme', currentTheme);
+
+        // Start animator
+        const interval = setInterval(() => {
+            animator.tick();
+            asciiFrame = animator.currentFrame;
+        }, 200);
+        return () => clearInterval(interval);
     });
 
 </script>
@@ -265,7 +280,7 @@
 
         <!-- Ascii Art Animation -->
         <div class="ascii_art">
-            <h1>[&gt;\.&lt;;;].. zZ</h1>
+            <h1>{asciiFrame}</h1>
         </div>
 
         <!-- Theme Switcher Buttons -->

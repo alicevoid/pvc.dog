@@ -1,5 +1,6 @@
 <script lang="ts">
     import { posts } from '$lib/posts';
+    import { buttons } from '$lib/buttons';
 
     // lightbox state - which image is open (null = closed)
     let lightbox_src: string | null = $state(null);
@@ -77,6 +78,14 @@
         border-top: 1px solid var(--text-color);
         border-bottom: 1px solid var(--text-color);
     }  
+
+    .think_diff:hover {
+        z-index: 10001;
+        position: relative;
+        box-shadow: 0 0 20px 4px rgba(0,0,0,0.15);
+        transition: box-shadow 0.3s, transform 0.3s;
+        transform: scale(1.04);
+    }
 
     /* Middle Content Area */
 
@@ -222,6 +231,27 @@
         border-top: 1px solid var(--text-color);
     }
 
+    /* floating buttons below rhs_content */
+    .rhs_buttons {
+        position: absolute;
+        width: 300px;  /*88*3 + gaps */
+        right: calc(50vw - 620px);  /* same as rhs_content */
+        top: 770px;  /* below rhs_content: 350 + 380 + 40px gap */
+        padding: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 5px;
+        /* no background = floats over page bg */
+    }
+
+    .rhs_button {
+        /* standard 88x31 button size */
+        width: 88px;
+        height: 31px;
+    }
+
     /* the humble, Mobile Phone */
     @media (max-width: 600px) {
         .mid_content {
@@ -254,6 +284,8 @@
          <!-- random blinkie people finder -->
          <div class="blinkies_scroll">
          </div>
+
+         <img class="think_diff" src="/think_different.gif" alt="think different" />
     </div>
     
     <div class="mid_content">
@@ -317,6 +349,19 @@
                 <p style="word-wrap: break-word;">controller thingy here...</p>
             </div>
         </div>
+    </div>
+
+    <!-- floating buttons below rhs -->
+    <div class="rhs_buttons">
+        {#each buttons as btn}
+            {#if btn.link}
+                <a href={btn.link} target="_blank">
+                    <img class="rhs_button" src={btn.src} alt="button" />
+                </a>
+            {:else}
+                <img class="rhs_button" src={btn.src} alt="button" />
+            {/if}
+        {/each}
     </div>
 </main>
 
