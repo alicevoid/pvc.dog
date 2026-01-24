@@ -192,7 +192,7 @@
 
     .vsbw {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-direction: row;
         align-items: flex-start;
         height: 110px;
@@ -296,10 +296,12 @@
             <h3>who would win in a fight</h3>
             <div class="vsbw">
                 <div class="vsbw_lhs">
+                    <img class="vsbw_lhs_img" src="debug_ant.jpg" alt="ant" width="60px" height="60px" />
                     <p>ants</p>
                 </div>
                 <div class="vsbw_rhs">
-                    <p>earth</p>
+                    <img class="vsbw_rhs_img" src="debug_beetle.jpg" alt="beetle" width="60px" height="60px" />
+                    <p>beetles</p>
                 </div>
             </div>
         </div>
