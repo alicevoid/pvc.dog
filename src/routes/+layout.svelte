@@ -5,7 +5,7 @@
 
 	import favicon from '$lib/assets/favicon.svg';
     import { onMount } from 'svelte';
-    import { AsciiAnimator } from '$lib/typescript/ascii_animator';
+    import { AsciiAnimator, TICK_INTERVAL_MS } from '$lib/typescript/ascii_animator';
 
 	let { children } = $props();
 
@@ -46,7 +46,7 @@
         const interval = setInterval(() => {
             animator.tick();
             asciiFrame = animator.currentFrame;
-        }, 200);
+        }, TICK_INTERVAL_MS);
         return () => clearInterval(interval);
     });
 

@@ -3,12 +3,12 @@
 // ==========================================================================================
 
 // Configuration
-export const TICK_INTERVAL_MS = 200;        // 5 frames per second
+export const TICK_INTERVAL_MS = 250;        // 4 frames per second
 export const TRANSITION_CHANCE = 0.5;       // 50% chance to attempt state transition
 export const DEFAULT_FRAME_WEIGHT = 1;      // default ticks per frame
 
 // Types
-export type StateName = 'Close' | 'Peek' | 'Look';
+export type StateName = 'Close' | 'Peek' | 'Look' | 'Ears';
 export type Frame = { t: string; w: number };
 export type Transition = { to: StateName; weight: number; frames: Frame[] };
 export type State = { frames: Frame[]; transitions: Transition[] };
@@ -60,13 +60,13 @@ export const states: Record<StateName, State> = {
     Look: {
         frames: [
             f('[o\\.0]', 2),
-            f('[O\\.0]', 2),
+            f('[O\\.0]', 3),
             f('[O\\.o]', 2),
-            f('[O\\.0]', 2),
+            f('[O\\.0]', 3),
         ],
         transitions: [
             { to: 'Close', weight: 60, frames: [
-                f('[O\\.0].'),
+                f('[O\\.0].', 2),
                 f('[O\\.0]..', 3),
                 f('[O\\.0]..  !'),
                 f('[>\\.<].  !!'),
@@ -74,11 +74,44 @@ export const states: Record<StateName, State> = {
                 f('[>\\.<;;]!!!'),
                 f('[>\\.<;;]!!.'),
                 f('[>\\.<;;]!..'),
-                f('[>\\.<;;]..'),
-                f('[>\\.<;;].. z', 2),
+                f('[>\\.<;;]..', 2),
+                f('[>\\.<;;].. z', 3),
             ]},
             // Stub for future: Look -> Ears (40%)
             // { to: 'Ears', weight: 40, frames: [...] }
+            { to: 'Ears', weight: 40, frames: [
+                f('[O\\.0].', 2),
+                f('[^O\\.0^]..', 3),
+                f('[O\\.0]..  !'),
+                f('[>\\.0].. !!', 2),
+                f('[Uo\\.0]...!!'),
+                f('[Uo\\.<]....!', 2),
+                f('[Uo\\.oU].... ', 3),
+                f('[U>\\.<U]!.. '),
+                f('[U>\\.<U]!!. '),
+                f('[U>\\.<U].!!! '),
+                f('[U>\\.oU] .!! '),
+                f('[Uo\\.oU]  .! '),
+                f('[Uo\\.oU]   .'),
+            ]}
+        ]
+    },
+    Ears: {
+        frames: [
+            f('[Uo\\.0U]', 2),
+            f('[UO\\.0U]', 3),
+            f('[UO\\.oU]', 2),
+            f('[UO\\.0U]', 3),
+        ],
+        transitions: [
+            { to: 'Ears', weight: 100, frames: [
+                f("['UO\\.oU]..", 2),
+                f("['U>\\.<U;]", 2),
+                f("[''U>\\.oU]", 3),
+                f("['U>\\.<;U]"),
+                f('[U>\\.<;;U]'),
+                f('[Uo\\.<;;U]', 3),
+            ]}
         ]
     },
 };
@@ -101,7 +134,7 @@ export class AsciiAnimator {
         return frames[this.frameIndex]?.t ?? '';
     }
 
-    /** Call every 200ms (5fps) */
+    /** Call every TICK_INTERVAL_MS */
     tick(): void {
         const frames = this.isTransitioning ? this.transitionFrames : states[this.state].frames;
         if (frames.length === 0) return;
