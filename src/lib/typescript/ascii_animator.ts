@@ -168,10 +168,16 @@ export const states: Record<StateName, State> = {
             {
                 to: 'Chill', weight: STARS_TO_CHILL, frames: [
                     f('[Uo\\.+U]', MEDIUM),
-                    f('[U+\\.+U]>', FAST),
+                    f('[U+\\.+U]>', ONE),
+                    f('[U+\\.+U]', ONE),
+                    f('[U+\\.+U]>', ONE),
                     f('[UO\\.+U]', SLOW),
-                    f('<[U+\\.+U]', FAST),
+                    f('<[U+\\.+U]', ONE),
+                    f(' [U+\\.+U]', ONE),
+                    f('<[U+\\.+U]', ONE),
                     f('[U+\\.0U]', MEDIUM),
+                    f('![U+\\.+U]!', FAST),
+                    f('[U+\\.+U]', ONE),
                     f('![U+\\.+U]!', FAST),
                 ]},
             { 
