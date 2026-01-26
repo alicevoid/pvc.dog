@@ -20,7 +20,8 @@ export const LOOK_TO_EARS = 60;
 export const EARS_TO_EARS = 25;
 export const EARS_TO_STARS = 75;
 export const STARS_TO_CHILL = 70;
-export const CHILL_TO_NOTICE = 100;
+export const CHILL_TO_NOTICE = 70;
+export const CHILL_TO_EARS = 30;
 export const NOTICE_TO_STARS = 100;
 export const STARS_TO_FREAK = 30;
 export const FREAK_TO_CLOSE = 100;
@@ -248,6 +249,9 @@ export const states: Record<StateName, State> = {
                     f("[U+\\.0U] ..!", FAST),
                     f("[U+\\.0U]  ..", SLOW),
                     f("[UO\\.0U]", MEDIUM),
+                ]
+                to: 'Ears', weight: CHILL_TO_EARS, frames: [
+                    f("[Uo\\.oU]")
                 ]
             }
         ]
