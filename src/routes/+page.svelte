@@ -349,7 +349,7 @@
 
         .think_diff {
             position: absolute;
-            bottom: 10px;
+            bottom: 30px;
             left: 20px;
             z-index: 1;
         }
@@ -374,10 +374,15 @@
         }
 
         .post {
-            margin-bottom: 30px;
+            padding-top: 100px;
+        }
+
+        .post:first-child {
+            padding-top: 20px;
         }
 
         .post:last-child {
+            padding-top: 140px;
             margin-bottom: 20px;
         }
 

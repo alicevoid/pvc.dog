@@ -290,10 +290,11 @@
     .theme_div {
         position: absolute;
         right: 10px;
+        padding-right: 10px;
         top: 50%;
         transform: translateY(-50%);
         margin: 0;
-        flex-direction: column;
+        flex-direction: row;
         gap: 4px;
     }
 
