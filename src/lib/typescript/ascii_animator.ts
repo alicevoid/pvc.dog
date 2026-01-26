@@ -250,10 +250,12 @@ export const states: Record<StateName, State> = {
                     f("[U+\\.0U]  ..", SLOW),
                     f("[UO\\.0U]", MEDIUM),
                 ]
+            },
+            {
                 to: 'Ears', weight: CHILL_TO_EARS, frames: [
-                    f("[Uo\\.oU]")
+                    f("[U?\\.oU].", SLOW)
                 ]
-            }
+            },
         ]
     },
     Notice: {
