@@ -167,8 +167,6 @@ hr {
 
 .header a, .header a:visited {
     color: var(--header-color);
-    margin-left: 0.8rem;
-    margin-right: 0.8rem;
 }
 
 .tabs {

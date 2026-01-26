@@ -1,4 +1,5 @@
 import { posts } from '$lib/posts';
+import { marked } from 'marked';
 
 // site info for the feed
 const site_url = 'https://pvc.dog';
@@ -10,9 +11,9 @@ export const prerender = true;
 export function GET() {
     const items = posts.map(post => `
         <item>
-            <title>${escape_xml(post.title)}</title>
+            <title>${escape_xml(markdown_to_plain(post.title))}</title>
             <link>${site_url}</link>
-            <description>${escape_xml(post.content)}</description>
+            <description>${escape_xml(markdown_to_plain(post.content))}</description>
             <pubDate>${format_date(post.date)}</pubDate>
         </item>
     `).join('');
@@ -49,4 +50,13 @@ function escape_xml(str: string): string {
         .replace(/>/g, '&gt;')
         .replace(/"/g, '&quot;')
         .replace(/'/g, '&apos;');
+}
+
+// convert markdown to plain text for RSS descriptions
+function markdown_to_plain(content: string): string {
+    const html = marked.parse(content) as string;
+    return html
+        .replace(/<[^>]+>/g, '')  // strip HTML tags
+        .replace(/\n{2,}/g, ' ')  // collapse multiple newlines
+        .trim();
 }

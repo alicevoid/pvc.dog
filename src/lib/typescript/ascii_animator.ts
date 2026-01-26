@@ -16,8 +16,8 @@ export const SLOW = 6;                      // lingering
 // TRANSITION WEIGHTS CONSTANTS ( % )
 export const CLOSE_TO_PEEK = 100;
 export const PEEK_TO_LOOK = 100;
-export const LOOK_TO_CLOSE = 40;
-export const LOOK_TO_EARS = 60;
+export const LOOK_TO_CLOSE = 40; // 40%
+export const LOOK_TO_EARS = 60; // 60%
 export const EARS_TO_EARS = 25;
 export const EARS_TO_STARS = 75;
 export const STARS_TO_CHILL = 70;

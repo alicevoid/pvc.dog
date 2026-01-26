@@ -89,10 +89,10 @@
     /* Original Colors */
     --ori_accent: #12efdd;
     --ori_background: #777fd2;
-    --ori_content-accent: #eaf1ab;
-    --ori_content: #efe3e7;
+    --ori_content-accent: #d3d3d3;
+    --ori_content: #ffffff;
     --ori_header-color: #550fc5;
-    --ori_text-color: #f20b99;
+    --ori_text-color: #550fc5;
     --ori_linkbg: #12efdd;
 }
 
@@ -158,7 +158,7 @@
 	font-size: 15px;
     margin: 0;
     padding: 0;
-	/* animation: scrollBackground 16s linear infinite; */
+	animation: scrollBackground 20.57s linear infinite;
 }
 
 :global(body) {
