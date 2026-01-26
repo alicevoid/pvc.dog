@@ -268,7 +268,7 @@
         min-height: 100px;
         padding: 20px 10px;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         overflow: visible;
@@ -288,12 +288,13 @@
     }
 
     .theme_div {
-        position: absolute;
+        position: relative;
         right: 10px;
-        padding-right: 10px;
+        /* padding-right: 10px; */
         top: 50%;
         transform: translateY(-50%);
-        margin: 0;
+        /* margin: 0; */
+        margin-top: 30px;
         flex-direction: row;
         gap: 4px;
     }
