@@ -318,10 +318,120 @@
         height: 31px;
     }
 
-    /* the humble, Mobile Phone */
-    @media (max-width: 600px) {
+    /* Mobile: Stack columns vertically */
+    @media (max-width: 1024px) {
+        .content-body {
+            min-height: auto;
+            overflow: visible;
+            padding-bottom: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .lhs_content {
+            position: relative;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            left: auto;
+            top: auto;
+            order: 1;
+            margin-bottom: 20px;
+            padding-bottom: 80px;
+            border-right: none;
+            box-sizing: border-box;
+        }
+
+        .blinkies_scroll {
+            z-index: 2;
+        }
+
+        .think_diff {
+            position: absolute;
+            bottom: 10px;
+            left: 20px;
+            z-index: 1;
+        }
+
         .mid_content {
             width: 100%;
+            max-width: 100%;
+            margin-top: 0;
+            height: auto;
+            order: 2;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+
+        .intro {
+            height: auto;
+        }
+
+        .mid_feed {
+            max-height: none;
+            overflow-y: visible;
+        }
+
+        .post {
+            margin-bottom: 30px;
+        }
+
+        .post:last-child {
+            margin-bottom: 20px;
+        }
+
+        .post_image {
+            margin-bottom: 15px;
+        }
+
+        .rhs_content {
+            position: static;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            right: auto;
+            top: auto;
+            order: 3;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .fact {
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .vsbw {
+            width: 100%;
+        }
+
+        .math {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .mathfun {
+            width: 100%;
+            height: auto;
+            min-height: 150px;
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+
+        .mathfun_controller {
+            width: 100%;
+            height: auto;
+        }
+
+        .rhs_buttons {
+            position: static;
+            width: 100%;
+            max-width: 100%;
+            right: auto;
+            top: auto;
+            order: 4;
         }
     }
 

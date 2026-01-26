@@ -260,6 +260,52 @@
     text-align: center;
     font-size: 16px;
 }
+
+/* Mobile: Header row with centered text, theme buttons on right */
+@media (max-width: 1024px) {
+    .header {
+        height: auto;
+        min-height: 100px;
+        padding: 20px 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        overflow: visible;
+        position: relative;
+    }
+
+    .ascii_art {
+        font-size: 16px;
+        line-height: 16px;
+        overflow-x: auto;
+        padding: 10px 0;
+        flex-shrink: 0;
+    }
+
+    .ascii_art h1 {
+        white-space: pre;
+    }
+
+    .theme_div {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .theme_button {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer {
+        height: 50px;
+    }
+}
 </style>
 
 
