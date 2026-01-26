@@ -178,39 +178,40 @@ export const states: Record<StateName, State> = {
                 to: 'Freak', weight: STARS_TO_FREAK, frames: [
                     f("[U?\\.oU].", FAST),
                     f("[UO\\.?U].", MEDIUM),
-                    f("[UO\\.oU]?.", SLOW)
+                    f("[UO\\.oU]?.", SLOW),
+                    f("[Uo\\.oU]??.", MEDIUM),
+                    f("[Uo\\.oU]???", MEDIUM),
+                    f("[U#\\.#U].??", ONE),
+                    f("[U@\\.@U]?.?", ONE),
+                    f("[UQ\\.QU]..?.", FAST),
+                    f("[UQ\\.QU] ..?", MEDIUM),
+                    f("[UQ\\.QU]  ..", SLOW),
+                    f(";[U>\\.<U];", ONE),
+                    f(";;[U>\\.<U];;", ONE),
+                    f(";;U[>\\.<]U;;", ONE),
+                    f(";U;[>\\.<];U;", ONE),
+                    f("U;;[>\\.<];;U", ONE),
+                    f(";;,[>\\.<],;;", ONE),
+                    f(";,[>\\.<] ,;", ONE),
+                    f(",[>\\.<]  ,", ONE)
                 ]}
         ]
     },
     Freak: {
         frames: [
-            f("[Uo\\.oU]??.", MEDIUM),
-            f("[Uo\\.oU]???", MEDIUM),
-            f("[U#\\.#U].??", ONE),
-            f("[U@\\.@U]?.?", ONE),
-            f("[UQ\\.QU]..?.", FAST),
-            f("[UQ\\.QU] ..?", MEDIUM),
-            f("[UQ\\.QU]  ..", SLOW),
-            f(";[U>\\.<U];", ONE),
-            f(";;[U>\\.<U];;", ONE),
-            f(";;U[>\\.<]U;;", ONE),
-            f(";U;[>\\.<];U;", ONE),
-            f("U;;[>\\.<];;U", ONE),
-            f(";;,[>\\.<],;;", ONE),
-            f(";,[>\\.<] ,;", ONE),
-            f(",[>\\.<]  ,", ONE)
+            f("[>\\.<]  ", FAST),
+            f("[>\\.<] ~ ", MEDIUM),
+            f("[>\\.<]  ~", MEDIUM),
+            f("[>\\.<]", MEDIUM),
+            
         ],
         transitions: [
             // to Close -> 100%
             {
                 to: 'Close', weight: FREAK_TO_CLOSE, frames: [
-                    f("[>\\.<]  ", FAST),
-                    f("[>\\.<] ~ ", MEDIUM),
-                    f("[>\\.<]  ~", MEDIUM),
-                    f("[>\\.<]", MEDIUM),
-                    f('[>\\.<;;].', MEDIUM),
-                    f('[>\\.<;;]..', MEDIUM),
-                    f('[>\\.<;;].. z', MEDIUM),
+                    f('[>\\.<].', MEDIUM),
+                    f('[>\\.<]..', MEDIUM),
+                    f('[>\\.<;].. z', MEDIUM),
                     f('[>\\.<;;].. Zz', MEDIUM)
                 ]
             }
