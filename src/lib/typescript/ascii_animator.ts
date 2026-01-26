@@ -3,7 +3,8 @@
 // ==========================================================================================
 
 // Configuration
-export const TICK_INTERVAL_MS = 125;        // 8 frames per second
+export const FRAMES_PER_SECOND = 8;
+export const TICK_INTERVAL_MS = 1000 / FRAMES_PER_SECOND;   
 export const TRANSITION_CHANCE = 0.5;       // 50% chance to attempt state transition
 
 // Frame speed constants (in ticks)
@@ -20,8 +21,8 @@ export const LOOK_TO_EARS = 60;
 export const EARS_TO_EARS = 25;
 export const EARS_TO_STARS = 75;
 export const STARS_TO_CHILL = 70;
-export const CHILL_TO_NOTICE = 70;
-export const CHILL_TO_EARS = 30;
+export const CHILL_TO_NOTICE = 100;
+export const CHILL_TO_EARS = 0;
 export const NOTICE_TO_STARS = 100;
 export const STARS_TO_FREAK = 30;
 export const FREAK_TO_CLOSE = 100;
