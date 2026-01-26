@@ -25,6 +25,7 @@
 		"vite": "^7.2.2"
 	},
 	"dependencies": {
-		"marked": "^17.0.1"
+		"marked": "^17.0.1",
+		"svelte-kit": "^1.2.0"
 	}
 }

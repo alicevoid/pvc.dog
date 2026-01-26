@@ -3,7 +3,7 @@
 
 <script lang="ts">
 
-	import favicon from '$lib/assets/favicon.svg';
+	// import favicon from '$lib/assets/favicon.svg';
     import { onMount } from 'svelte';
     import { AsciiAnimator, TICK_INTERVAL_MS } from '$lib/typescript/ascii_animator';
 
@@ -264,7 +264,7 @@
 
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<!-- <link rel="icon" href={favicon} /> -->
 
 	<!-- Standard Header Stuff -->
     <title> 01.25" PVC Pipe Database</title>
