@@ -354,6 +354,11 @@
             z-index: 1;
         }
 
+        .think_diff:hover {
+        position: absolute;
+        }
+
+
         .mid_content {
             width: 100%;
             max-width: 100%;
