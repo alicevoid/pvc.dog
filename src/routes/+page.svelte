@@ -92,9 +92,18 @@
         border-bottom: 1px solid var(--text-color);
     }  
 
+    .think_diff {
+        position: absolute;
+        bottom: 32px;
+        left: 20px;
+        z-index: -1;
+        /* margin-top: 30px; */
+        /* background-color: var(--linkbg); */
+    }
+
     .think_diff:hover {
         z-index: 10001;
-        position: relative;
+        position: absolute;
         box-shadow: 0 0 20px 4px rgba(0,0,0,0.15);
         transition: box-shadow 0.3s, transform 0.3s;
         transform: scale(1.04);
@@ -352,6 +361,8 @@
             bottom: 30px;
             left: 20px;
             z-index: 1;
+            /* margin-top: 30px; */
+            /* background-color: var(--linkbg); */
         }
 
         .think_diff:hover {
