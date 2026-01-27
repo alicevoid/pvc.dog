@@ -483,7 +483,7 @@
          <div class="links"> find me on...
             <ul>
                 <li><a href="https://github.com/alicevoid" target="_blank">github</a></li>
-                <li><a href="https://bsky.app/profile/alicevo.id" target="_blank">bluesky</a></li>
+                <!-- <li><a href="https://bsky.app/profile/alicevo.id" target="_blank">bluesky</a></li> -->
                 <li><a href="https://soundcloud.com/alicevoid" target="_blank">soundcloud</a></li>
             </ul>
          </div>
